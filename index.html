@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Amor</title>
+
+    <!-- Importação das Fontes -->
+    <style>
+        @font-face {
+            font-family: 'Garet';
+            src: url('fonte/garet.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Cy';
+            src: url('fonte/cy.ttf') format('truetype');
+        }
+    </style>
+
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f1e7;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #f3f1e7;
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Estilos do Texto e Imagem */
+        .left {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .left h1 {
+            font-size: 36px;
+            margin-top: 40px; /* Espaço para o botão */
+            font-family: 'Garet', sans-serif; /* Aplicando a fonte Garet */
+        }
+
+        .left p {
+            font-size: 18px;
+            line-height: 1.5;
+            font-family: 'Cy', sans-serif; /* Aplicando a fonte Cy */
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            color: #d95b57;
+            border: 2px solid #d95b57;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .buttons a:hover {
+            background-color: #d95b57;
+            color: #fff;
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Estilo do botão de música */
+        .music-button {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #d95b57;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <!-- Botão de Música sobre o Título -->
+            <button class="music-button" onclick="playMusic()">Tocar Música 🎶</button>
+            
+            <h1>Para o Meu Amor</h1>
+            <p>Fiz esse site para você se lembrar que nada é mais importante pra mim do que seu amor</p>
+            <div class="buttons">
+                <a href="#">Clique aqui quando estiver feliz</a>
+                <a href="#">Clique aqui quando estiver triste</a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="imagens/capa/capa1.jpg" alt="Foto de casal">
+        </div>
+    </div>
+
+    <!-- Áudio com reprodução controlada -->
+    <audio id="background-music" src="musicas/musica1.mp3"></audio>
+
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('background-music');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
